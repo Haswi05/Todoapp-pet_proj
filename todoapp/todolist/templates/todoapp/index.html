@@ -14,8 +14,10 @@
         <button class="ui teal basic button" type="submit"> Добавить </button>
     </form>
 
-
-
+    <form class="ui form" method="post" action="{% url 'logout' %}?next=/index/">
+        {% csrf_token %}
+        <button class="ui blue button" type="submit" style="position: relative; top: 200px; left: 960px;">Выйти из аккаунта</button>
+    </form>
 
 {% for todo in todos %}
     <div class="ui segment">

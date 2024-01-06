@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
 from django.views.decorators.http import require_http_methods
+from django.contrib.auth.decorators import login_required
 from .models import Todo
 # Create your views here.
-
+@login_required
 def index(request):
     todos = Todo.objects.all()
     return render(request, 'todoapp/index.html', {'todos' : todos, 'title' : 'Главная страница'})

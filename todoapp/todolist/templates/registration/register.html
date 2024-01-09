@@ -1,0 +1,56 @@
+<!-- templates/registration/register.html -->
+{% extends 'todoapp/layot.html' %}
+
+{% block content %}
+    <!-- <h2>Register</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="text" name="username" placeholder="Введите ваше имя">
+        <input type="email" name="email" placeholder="Введите ваш email">
+        <input type="text" name="">
+        <input type="password" name="password1">
+        <input type="password" name="password2">
+        <button type="submit">Register</button>
+    </form> -->
+    <div class="ui container">
+        <h2 class="ui blue header">Регистрация пользователя</h2>
+    
+        <form class="ui form" method="post">
+            {% csrf_token %}
+            <div class="two fields">
+                <div class="field">
+                    <label>Идентификатор</label>
+                    <input type="text" name="username" placeholder="Имя пользователя">
+                </div>
+                <div class="field">
+                    <label>Электронная почта</label>
+                    <input type="email" name="email" placeholder="Электронная почта">
+                </div>
+            </div>
+            <div class="two fields">
+                <div class="field">
+                    <label>Имя</label>
+                    <input type="text" name="first_name" placeholder="Имя">
+                </div>
+                <div class="field">
+                    <label>Фамилия</label>
+                    <input type="text" name="last_name" placeholder="Фамилия">
+                </div>
+            </div>
+            <div class="two fields">
+                <div class="field">
+                    <label>Пароль</label>
+                    <input type="password" name="password1" placeholder="Пароль">
+                </div>
+                <div class="field">
+                    <label>Потвердите пароль</label>
+                    <input type="password" name="password2" placeholder="Потвердите пароль">
+                </div>
+            </div>
+    
+            <button class="ui blue button" type="submit">Зарегистрироваться</button>
+        </form>
+    </div>
+    {{form.surname}}
+{% endblock %}

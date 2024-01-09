@@ -13,7 +13,8 @@ def index(request):
 @require_http_methods(['POST'])
 def add(request):
     title = request.POST['title']
-    todo = Todo(title=title)
+    user = request.user
+    todo = Todo(title=title, user=user)
     todo.save()
     return redirect('index')
 
